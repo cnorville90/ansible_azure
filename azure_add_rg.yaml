@@ -1,0 +1,16 @@
+---
+- name: A playbook to add a resource group to Azure
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Create a RG
+      azure_rm_resourcegroup:
+        name: mydarn-rg
+        location: eastus
+      register: rg
+
+    - name: display the result
+      debug:
+        var: rg
