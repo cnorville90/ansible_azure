@@ -1,0 +1,17 @@
+---
+- name: A playbook to remove a resource group from Azure
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+    - name: Remove a Resource Group
+      azure_rm_resourcegroup:
+        name: mydarn-rg
+        location: eastus
+        state: absent
+      register: removed_rg
+
+    - name: display the results
+      debug:
+        var: removed_rg
