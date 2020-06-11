@@ -11,6 +11,6 @@
         location: eastus
       register: rg
 
-    - name: display the result
+    - name: display the results
       debug:
         var: rg
